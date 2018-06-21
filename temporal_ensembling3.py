@@ -48,6 +48,8 @@ def addGaussian(I, ismulti=True):
 
 
 def create_dataloader(train_dataset, test_dataset, batch_size, k, seed):
+
+    '''Unlabelled images get label = -1'''
     n_sample = len(train_dataset)
     random.seed(seed)
     labelled_data_index = np.random.choice(range(n_sample), k, replace= False)
